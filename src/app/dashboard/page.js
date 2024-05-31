@@ -34,7 +34,7 @@ export default function Dashboard() {
   const randomBean = data[randomIndex];
 
   return (
-    <main className="flex min-h-screen flex-col justify-center items-center p-24 text-black dark:text-white">
+    <main className="flex min-h-screen flex-col justify-center items-center p-24 text-white">
       <h1 className="text-4xl font-bold pb-4">Wellcome to Coffee Valley</h1>
       <p>Hello {userId}</p>
       <hr className="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
