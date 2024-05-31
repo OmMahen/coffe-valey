@@ -14,7 +14,9 @@ export default function Home() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    localStorage.setItem('userId', userId);
+    if (typeof window !== "undefined") {
+      localStorage.setItem('userId', userId);
+    }
     router.push("/dashboard");
   };
 

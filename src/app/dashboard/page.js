@@ -3,7 +3,10 @@ import { useState, useEffect } from "react";
 import { Spinner } from "flowbite-react";
 
 export default function Dashboard() {
-  const userId = localStorage.getItem("userId");
+  let userId;
+  if (typeof window !== "undefined") {
+    userId = localStorage.getItem("userId");
+  }
 
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
