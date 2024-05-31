@@ -1,31 +1,34 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Spinner } from "flowbite-react";
+import getBeans from "../data/beans";
 
 export default function Dashboard() {
-  let userId;
+  let userId = null;
   if (typeof window !== "undefined") {
     userId = localStorage.getItem("userId");
   }
 
-  const [data, setData] = useState(null);
-  const [isLoading, setLoading] = useState(true);
+  // const [data, setData] = useState(null);
+  // const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("/api/data?type=beans")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("/api/data?type=beans")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
-  if (isLoading)
-    return (
-      <main className="min-h-screen bg-white dark:bg-black mt-14 flex justify-center items-center">
-        <Spinner />;
-      </main>
-    );
+  // if (isLoading)
+  //   return (
+  //     <main className="min-h-screen bg-white dark:bg-black mt-14 flex justify-center items-center">
+  //       <Spinner />;
+  //     </main>
+  //   );
+
+  const data = getBeans();
 
   const randomIndex = Math.floor(Math.random() * data.length);
   const randomBean = data[randomIndex];
