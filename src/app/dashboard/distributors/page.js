@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Spinner } from "flowbite-react";
 import DistributorsTable from "@/components/distributorsTable";
+import { DistributorsForm } from "@/components/distributorsForm";
 
 export default function Distributors() {
   const [data, setData] = useState(null);
@@ -26,7 +27,10 @@ export default function Distributors() {
 
   return (
     <main className="flex min-h-screen flex-col justify-center items-center p-24 text-black dark:text-white">
-        <DistributorsTable data={data}/>
+      <div className="flex gap-4">
+        <DistributorsTable data={data} />
+        <DistributorsForm />
+      </div>
     </main>
   );
 }
