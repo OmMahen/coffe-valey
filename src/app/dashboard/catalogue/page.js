@@ -4,26 +4,30 @@ import { Table } from "flowbite-react";
 import { useState, useEffect } from "react";
 import { Spinner } from "flowbite-react";
 
+import getBeans from "@/app/data/beans";
+
 export default function Catalogue() {
-  const [data, setData] = useState(null);
-  const [isLoading, setLoading] = useState(true);
+  // const [data, setData] = useState(null);
+  // const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("/api/data?type=beans")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("/api/data?type=beans")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
-  if (isLoading)
-    return (
-      <main className="min-h-screen bg-white dark:bg-black mt-14 flex justify-center items-center">
-        <Spinner />;
-      </main>
-    );
+  // if (isLoading)
+  //   return (
+  //     <main className="min-h-screen bg-white dark:bg-black mt-14 flex justify-center items-center">
+  //       <Spinner />;
+  //     </main>
+  //   );
 
+  const data = getBeans();
+  
   return (
     <main className="flex min-h-screen flex-col justify-center items-center p-24 text-black dark:text-white">
       <div className="overflow-x-auto">
