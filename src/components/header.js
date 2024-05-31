@@ -19,6 +19,7 @@ export default function Header() {
         </Navbar.Link>
         <Navbar.Link href="/dashboard/distributors">Distributors</Navbar.Link>
         <Navbar.Link href="/dashboard/upload">Upload</Navbar.Link>
+        <Navbar.Link href="/">Logout</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );
