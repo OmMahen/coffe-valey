@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <Navbar fluid rounded>
       <Navbar.Brand as={Link} href="/dashboard">
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+        <span className="self-center whitespace-nowrap text-xl font-semibold text-black dark:text-white">
           Coffee Valley
         </span>
       </Navbar.Brand>
